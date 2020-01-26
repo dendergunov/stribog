@@ -1,7 +1,7 @@
 #include <string.h>
 
-#include "stribog_constants.h"
-#include "stribog.h"
+#include "stribog_constants.hpp"
+#include "stribog.hpp"
 
 static inline void add_512(const unsigned char* lop, const unsigned char* rop, unsigned char* result)
 {

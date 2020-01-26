@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "stribog.h"
+#include "stribog.hpp"
 
 
 int main()
