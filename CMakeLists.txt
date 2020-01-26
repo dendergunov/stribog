@@ -1,15 +1,7 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.12 FATAL_ERROR)
 
-#set the project name and version
-project(StribogFT VERSION 1.0)
+project(StribogFT)
 
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
+add_executable(${PROJECT_NAME} main.c stribog.c)
 
-#add the executable
-add_executable(StribogFT main.cpp stribog.cpp)
-
-target_include_directories(StribogFT PUBLIC 
-							"${PROJECT_BINARY_DIR}"
-							)
 
