@@ -47,7 +47,13 @@ int main(int argc, char **argv)
     std::cout << "\n------------------------------------------\n";
 
     ft::fts ft_stribog(std::move(v), 3);
-    ft_stribog.ft();
+    v = ft_stribog.ft();
+
+    std::cout << "\nFINALLY I'M DONE PLEASE GIVE ME A REST\n";
+    for(auto x: v){
+        ft::hexcout{} << x;
+        std::cout << ' ';
+    }
 
     return 0;
 }

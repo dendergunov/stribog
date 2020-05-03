@@ -32,6 +32,8 @@ namespace ft {
         void add_sblock_indexes(std::vector<unsigned char>& v);
 
         std::size_t l_arity_;
+        std::size_t tau_;
+        std::size_t sblock_number_;
         uint_512 sblock_index_;
         std::vector<unsigned char> v_;
     };

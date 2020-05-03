@@ -26,10 +26,20 @@ fts::fts(std::vector<unsigned char>&& vec, std::size_t l_arity) :
 
 std::vector<unsigned char> fts::ft()
 {
+    std::cout << "FIRST STAGE \n";
     first_stage();
+    std::cout << "SECOND STAGE \n";
     second_stage();
 
-    return std::vector<unsigned char>{};
+    //3rd stage
+    std::cout << "THIRD STAGE \n";
+    for(std::size_t i = 1; i < tau_+1; ++i){
+        std::cout << "i = " << i << '\n';
+        this->v_ = g_map(this->sblock_number_, this->v_.begin(), this->v_.end());
+        this->sblock_number_ /= this->l_arity_;
+    }
+
+    return this->v_;
 }
 
 void fts::first_stage()
@@ -50,30 +60,32 @@ void fts::first_stage()
 
 void fts::second_stage()
 {
-    //2.1 find tau
+    //2.1 find this->tau_
     std::size_t super_block_number = 1 + ((this->v_.size()/block_size)-1)/(this->l_arity_+1);
-    std::size_t tau = 1;
+    this->tau_ = 1;
     std::size_t l_power = this->l_arity_;
     while(super_block_number >= l_power){
         l_power *= this->l_arity_;
-        ++tau;
+        ++this->tau_;
     }
-    --tau;
+    --this->tau_;
     l_power /= this->l_arity_;
 
-    std::cout << "tau: " << tau << '\n';
-    if(super_block_number == l_power){
-        //do nothing
-        ;
-    } else {
+    std::cout << "this->tau_: " << this->tau_ << '\n';
+    if(super_block_number != l_power){
         std::size_t delta = 1+((super_block_number-l_power)-1)/(this->l_arity_-1);
         std::cout << "delta: " << delta << '\n';
         std::size_t left_half_block_number = super_block_number - l_power + delta;
         std::size_t right_half_block_number = l_power - delta;
 
-        g_map(left_half_block_number, v_.begin(), v_.end()-(right_half_block_number*block_size*(l_arity_+1)));
+        std::vector<unsigned char> leftvec = g_map(left_half_block_number, v_.begin(), v_.end()-(right_half_block_number*block_size*(l_arity_+1)));
+        auto rightvec_pos = this->v_.end()-(right_half_block_number)*(l_arity_+1)*(block_size);
+        leftvec.insert(leftvec.end(), rightvec_pos, this->v_.end());
+        this->v_ = std::move(leftvec);
+        this->sblock_number_ = right_half_block_number + 1 + (left_half_block_number-1)/l_arity_;
+    } else {
+        this->sblock_number_ = super_block_number;
     }
-
 }
 
 std::vector<unsigned char> fts::g_map(std::size_t sblock_number, std::vector<unsigned char>::iterator begin, std::vector<unsigned char>::iterator end)
@@ -105,7 +117,7 @@ std::vector<unsigned char> fts::g_map(std::size_t sblock_number, std::vector<uns
 
     //last block should be hadled carefully because it can be not full
     std::cout << "outer block " << out_sblock_number << '\n';
-    auto end_pos = end - full_sblock_number * out_sblock_size;
+    auto end_pos = end - (out_sblock_number-1) * out_sblock_size;
     auto size = end_pos - begin;
     auto sbn = size / in_sblock_size;
     for(std::size_t i = 1; i <= sbn; ++i){
@@ -119,14 +131,17 @@ std::vector<unsigned char> fts::g_map(std::size_t sblock_number, std::vector<uns
         hash_512(&(*pos), in_sblock_size, tmp);
         out.insert(out.begin(), tmp, tmp+block_size);
     }
-    std::cout << "inner block" << sbn + 1 << '\n';
-    for(auto p = begin; p < end_pos - sbn*in_sblock_size; ++p){
-        hexcout{} << *p;
-        std::cout << ' ';
+
+    if(size % in_sblock_size){
+        std::cout << "inner block" << sbn + 1 << '\n';
+        for(auto p = begin; p < end_pos - sbn*in_sblock_size; ++p){
+            hexcout{} << *p;
+            std::cout << ' ';
+        }
+        std::cout << '\n';
+        hash_512(&(*begin), end-sbn*in_sblock_size-begin, tmp);
+        out.insert(out.begin(), tmp, tmp+block_size);
     }
-    std::cout << '\n';
-    hash_512(&(*begin), end-sbn*in_sblock_size-begin, tmp);
-    out.insert(out.begin(), tmp, tmp+block_size);
 
     std::cout << "Out vector: size - " << out.size() << "\n";
     for(auto x: out){
@@ -143,24 +158,26 @@ std::vector<unsigned char> fts::g_map(std::size_t sblock_number, std::vector<uns
 
 void fts::add_sblock_indexes(std::vector<unsigned char>& v)
 {
+    std::cout << "add_sblock_indexes: \n";
     std::size_t block_number = v.size() / block_size;
     std::size_t full_super_block_number = block_number / this->l_arity_;
-    std::size_t incomplete_super_block_number = (block_number / this->l_arity_ > 0) ? 1 : 0;
+    std::size_t incomplete_super_block_number = (block_number % this->l_arity_ > 0) ? 1 : 0;
     std::size_t incomplete_super_block_size = block_number % this->l_arity_;
     std::size_t super_block_number = full_super_block_number + incomplete_super_block_number;
 
     for(std::size_t i = 1; i <= full_super_block_number; ++i){
-        std::vector<unsigned char>::const_iterator pos = v.begin() + (block_number%this->l_arity_)*block_size
+        std::vector<unsigned char>::const_iterator pos = v.begin() + incomplete_super_block_size*block_size
                                                          + (full_super_block_number-i)*this->l_arity_*block_size;
         v.insert(pos, this->sblock_index_.begin(), this->sblock_index_.end());
         ++this->sblock_index_;
     }
 
-    std::size_t t = (incomplete_super_block_size + 1) * block_size;
+    std::size_t t = 0;
     if(incomplete_super_block_number){
         v.insert(v.begin(), this->sblock_index_.begin(), this->sblock_index_.end());
         ++this->sblock_index_;
         std::cout  << "Super block number " << super_block_number << '\n';
+        t = (incomplete_super_block_size + 1) * block_size;
         for(auto i = v.begin(); i < v.begin()+ t; ++i) {
             ft::hexcout{} << *i;
             std::cout << ' ';
@@ -178,6 +195,8 @@ void fts::add_sblock_indexes(std::vector<unsigned char>& v)
         }
         std::cout << "\n\n";
     }
+
+    std::cout << "After addition indexes size of vector: " << v.size() << '\n';
 
 }
 
