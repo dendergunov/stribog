@@ -1,4 +1,5 @@
 #include "ft_stribog.hpp"
+#include "stribog.hpp"
 
 #include <iostream>
 #include <iomanip>
@@ -75,7 +76,7 @@ void fts::second_stage()
 
 }
 
-void fts::g_map(std::size_t sblock_number, std::vector<unsigned char>::iterator begin, std::vector<unsigned char>::iterator end)
+std::vector<unsigned char> fts::g_map(std::size_t sblock_number, std::vector<unsigned char>::iterator begin, std::vector<unsigned char>::iterator end)
 {
     std::size_t in_sblock_size = block_size * (this->l_arity_+1);
     std::size_t out_sblock_size = in_sblock_size * this->l_arity_;
@@ -84,9 +85,10 @@ void fts::g_map(std::size_t sblock_number, std::vector<unsigned char>::iterator 
     std::size_t out_sblock_number = full_sblock_number + incomplete_sblock_number;
 
     std::vector<unsigned char> out;
-    out.resize(out_sblock_number);
+    std::cout << "out size: " << out.size() << '\n';
+    unsigned char tmp[block_size];
 
-    for(std::size_t i = 1; i <= full_sblock_number; ++i){
+    for(std::size_t i = 1; i < out_sblock_number; ++i){
         std::cout << "out sblock " << i << '\n';
         for(std::size_t j = 1; j <= l_arity_; ++j){
             std::cout << "inner block " << j << '\n';
@@ -96,39 +98,47 @@ void fts::g_map(std::size_t sblock_number, std::vector<unsigned char>::iterator 
                 std::cout << ' ';
             }
             std::cout << '\n';
-            out[out_sblock_number-i]+=1;
+            hash_512(&(*pos), in_sblock_size, tmp);
+            out.insert(out.begin(), tmp, tmp+block_size);
         }
     }
 
-    if(incomplete_sblock_number){
-        std::cout << "outer block " << out_sblock_number << '\n';
-        auto end_pos = end - full_sblock_number * out_sblock_size;
-        auto size = end_pos - begin;
-        auto sbn = size / in_sblock_size;
-        for(std::size_t i = 1; i <= sbn; ++i){
-            std::cout << "inner block " << i << '\n';
-            auto pos = end_pos - i*in_sblock_size;
-            for(auto p = pos; p != pos+in_sblock_size; ++p){
-                hexcout{} << *p;
-                std::cout << ' ';
-            }
-            std::cout << '\n';
-            out[0]+=1;
-        }
-        std::cout << "inner block" << sbn + 1 << '\n';
-        for(auto p = begin; p < end_pos - sbn*in_sblock_size; ++p){
+    //last block should be hadled carefully because it can be not full
+    std::cout << "outer block " << out_sblock_number << '\n';
+    auto end_pos = end - full_sblock_number * out_sblock_size;
+    auto size = end_pos - begin;
+    auto sbn = size / in_sblock_size;
+    for(std::size_t i = 1; i <= sbn; ++i){
+        std::cout << "inner block " << i << '\n';
+        auto pos = end_pos - i*in_sblock_size;
+        for(auto p = pos; p != pos+in_sblock_size; ++p){
             hexcout{} << *p;
             std::cout << ' ';
         }
         std::cout << '\n';
-        out[0]+=1;
+        hash_512(&(*pos), in_sblock_size, tmp);
+        out.insert(out.begin(), tmp, tmp+block_size);
     }
-    std::cout << "Out vector:\n";
+    std::cout << "inner block" << sbn + 1 << '\n';
+    for(auto p = begin; p < end_pos - sbn*in_sblock_size; ++p){
+        hexcout{} << *p;
+        std::cout << ' ';
+    }
+    std::cout << '\n';
+    hash_512(&(*begin), end-sbn*in_sblock_size-begin, tmp);
+    out.insert(out.begin(), tmp, tmp+block_size);
+
+    std::cout << "Out vector: size - " << out.size() << "\n";
     for(auto x: out){
         hexcout{} << x;
         std::cout << ' ';
     }
     std::cout << '\n';
+
+    std::cout << "add indexes:\n\n";
+    add_sblock_indexes(out);
+
+    return out;
 }
 
 void fts::add_sblock_indexes(std::vector<unsigned char>& v)
@@ -177,7 +187,6 @@ uint_512& operator ++(uint_512& n){
         *i += cf;
         cf = *i < cf;
     }
-
     return n;
 }
 }
