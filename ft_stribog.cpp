@@ -39,7 +39,12 @@ std::vector<unsigned char> fts::ft()
         this->sblock_number_ /= this->l_arity_;
     }
 
-    return this->v_;
+    std::vector<unsigned char> out;
+    out.resize(block_size);
+
+    hash_512(&(*v_.begin()), v_.size(), &(*out.begin()));
+
+    return out;
 }
 
 void fts::first_stage()
