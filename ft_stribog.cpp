@@ -44,41 +44,7 @@ void fts::first_stage()
     std::cout << "Number of blocks: " << this->v_.size() / block_size << '\n';
 
     //1.3 super block enumeration
-    std::size_t block_number = this->v_.size() / block_size;
-    std::size_t full_super_block_number = block_number / this->l_arity_;
-    std::size_t incomplete_super_block_number = (block_number / this->l_arity_ > 0) ? 1 : 0;
-    std::size_t incomplete_super_block_size = block_number % this->l_arity_;
-    std::size_t super_block_number = full_super_block_number + incomplete_super_block_number;
-
-    for(std::size_t i = 1; i <= full_super_block_number; ++i){
-        std::vector<unsigned char>::const_iterator pos = this->v_.begin() + (block_number%this->l_arity_)*block_size
-                                                         + (full_super_block_number-i)*this->l_arity_*block_size;
-        this->v_.insert(pos, this->sblock_index_.begin(), this->sblock_index_.end());
-        ++this->sblock_index_;
-    }
-
-    std::size_t t = (incomplete_super_block_size + 1) * 64;
-    if(incomplete_super_block_number){
-        this->v_.insert(this->v_.begin(), this->sblock_index_.begin(), this->sblock_index_.end());
-        ++this->sblock_index_;
-        std::cout  << "Super block number " << super_block_number << '\n';
-        for(auto i = this->v_.begin(); i < this->v_.begin()+ t; ++i) {
-            ft::hexcout{} << *i;
-            std::cout << ' ';
-        }
-        std::cout <<  "\n\n";
-    }
-
-    for(std::size_t i = 0; i < full_super_block_number; ++i){
-        std::vector<unsigned char>::const_iterator pos = this->v_.begin() + t
-                                                         + i*(this->l_arity_+1)*block_size;
-        std::cout << "Super block number " << full_super_block_number - i << '\n';
-        for(auto j = pos; j < pos + (this->l_arity_+1)*block_size; ++j){
-            ft::hexcout{} << *j;
-            std::cout << ' ';
-        }
-        std::cout << "\n\n";
-    }
+    add_sblock_indexes(this->v_);
 }
 
 void fts::second_stage()
@@ -111,8 +77,6 @@ void fts::second_stage()
 
 void fts::g_map(std::size_t sblock_number, std::vector<unsigned char>::iterator begin, std::vector<unsigned char>::iterator end)
 {
-
-
     std::size_t in_sblock_size = block_size * (this->l_arity_+1);
     std::size_t out_sblock_size = in_sblock_size * this->l_arity_;
     std::size_t full_sblock_number = sblock_number / this->l_arity_;
@@ -165,6 +129,46 @@ void fts::g_map(std::size_t sblock_number, std::vector<unsigned char>::iterator 
         std::cout << ' ';
     }
     std::cout << '\n';
+}
+
+void fts::add_sblock_indexes(std::vector<unsigned char>& v)
+{
+    std::size_t block_number = v.size() / block_size;
+    std::size_t full_super_block_number = block_number / this->l_arity_;
+    std::size_t incomplete_super_block_number = (block_number / this->l_arity_ > 0) ? 1 : 0;
+    std::size_t incomplete_super_block_size = block_number % this->l_arity_;
+    std::size_t super_block_number = full_super_block_number + incomplete_super_block_number;
+
+    for(std::size_t i = 1; i <= full_super_block_number; ++i){
+        std::vector<unsigned char>::const_iterator pos = v.begin() + (block_number%this->l_arity_)*block_size
+                                                         + (full_super_block_number-i)*this->l_arity_*block_size;
+        v.insert(pos, this->sblock_index_.begin(), this->sblock_index_.end());
+        ++this->sblock_index_;
+    }
+
+    std::size_t t = (incomplete_super_block_size + 1) * block_size;
+    if(incomplete_super_block_number){
+        v.insert(v.begin(), this->sblock_index_.begin(), this->sblock_index_.end());
+        ++this->sblock_index_;
+        std::cout  << "Super block number " << super_block_number << '\n';
+        for(auto i = v.begin(); i < v.begin()+ t; ++i) {
+            ft::hexcout{} << *i;
+            std::cout << ' ';
+        }
+        std::cout <<  "\n\n";
+    }
+
+    for(std::size_t i = 0; i < full_super_block_number; ++i){
+        std::vector<unsigned char>::const_iterator pos = v.begin() + t
+                                                         + i*(this->l_arity_+1)*block_size;
+        std::cout << "Super block number " << full_super_block_number - i << '\n';
+        for(auto j = pos; j < pos + (this->l_arity_+1)*block_size; ++j){
+            ft::hexcout{} << *j;
+            std::cout << ' ';
+        }
+        std::cout << "\n\n";
+    }
+
 }
 
 uint_512& operator ++(uint_512& n){
