@@ -25,18 +25,25 @@ std::optional<T> from_chars(std::string_view sv_) noexcept
 
 int main(int argc, char **argv)
 {
-    if (argc < 3)
-        throw std::runtime_error("Usage: <program-name> <arity> <file-name>\n");
+    if (argc < 4)
+        throw std::runtime_error("Usage: <program-name> <arity> <input-file> <output-file-prefix>\n");
 
     auto l_arity = from_chars<std::size_t>(argv[1]);
     if(!l_arity || *l_arity<2){
         throw std::runtime_error("set arity >= 2\n");
     }
 
-    std::fstream chars_file(argv[2], std::ios::binary | std::ios::in | std::ios::out);
+    std::fstream chars_file(argv[2], std::ios::binary | std::ios::in);
     if(!chars_file.is_open()){
-        throw std::runtime_error("Cannot open file!\n");
+        throw std::runtime_error(format("Cannot open file ", argv[2], " \n"));
     }
+
+    std::string_view output_prefix(argv[3]);
+
+    std::cout << "Execution with the next parameters:"
+              << "\nl-arity = " << *l_arity
+              << "\ninput file: " << argv[2]
+              << "\noutput file prefix: " << argv[3] << std::endl;
 
     std::vector<unsigned char> v{};
     std::stringstream ss;
@@ -45,21 +52,14 @@ int main(int argc, char **argv)
     v.insert(v.end(), s.begin(), s.end());
 
     std::cout << "File size in bytes: " << v.size() << ", in bits: " << v.size() * 8 << '\n';
-    /*std::cout << "Vector contains next bytes: \n";
-    for(auto x: v){
-        ft::hexcout{} << x;
-        std::cout << ' ';
-    }
-    std::cout << "\n------------------------------------------\n";
-    */
-    ft::fts ft_stribog(std::move(v), *l_arity);
-    v = ft_stribog.ft();
+//    std::cout << "Vector contains next bytes: \n";
+//    for(auto x: v){
+//        ft::hexcout{} << x;
+//        std::cout << ' ';
+//    }
 
-    std::cout << "\nFINALLY I'M DONE PLEASE GIVE ME A REST\n";
-    for(auto x: v){
-        ft::hexcout{} << x;
-        std::cout << ' ';
-    }
+    ft::fts ft_stribog(std::move(v), *l_arity, output_prefix);
+    v = ft_stribog.ft();
 
     return 0;
 }

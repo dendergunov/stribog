@@ -2,9 +2,19 @@
 #define FT_STRIBOG_HPP
 
 #include <iostream>
+#include <sstream>
 #include <iomanip>
 #include <vector>
 #include <array>
+#include <string_view>
+
+template<typename... Ts>
+std::string format(Ts&&... args)
+{
+    std::ostringstream out;
+    (out << ... << std::forward<Ts>(args));
+    return out.str();
+}
 
 namespace ft {
     constexpr int block_size = 64; //char8*64 = 512 bits
@@ -12,17 +22,16 @@ namespace ft {
     typedef std::array<unsigned char, block_size> uint_512;
     uint_512& operator ++(uint_512& n);
 
-    void ft_stribog(std::vector<unsigned char>& vec, std::size_t larity = 3);
-    void first_stage(std::vector<unsigned char>& vec, uint_512& sblock_index, std::size_t larity = 3);
-    void second_stage(std::vector<unsigned char>& vec, uint_512& sblock_index, std::size_t larity = 3);
-    void g_map(std::vector<unsigned char>& vec, uint_512& sblock_start_index);
-
     class fts {
     public:
-        fts(const std::vector<unsigned char>& vec, std::size_t l_arity);
-        fts(std::vector<unsigned char>&& vec, std::size_t l_arity);
-        ~fts() = default;
+        fts(const std::vector<unsigned char>& vec, std::size_t l_arity, std::string_view out_prefix);
+        fts(std::vector<unsigned char>&& vec, std::size_t l_arity, std::string_view out_prefix);
 
+        ~fts() = default;
+        fts& operator=(const fts& other) = delete;
+        fts& operator=(fts&& other) = delete;
+
+        //main function to call
         std::vector<unsigned char> ft();
 
     private:
@@ -36,6 +45,10 @@ namespace ft {
         std::size_t sblock_number_;
         uint_512 sblock_index_;
         std::vector<unsigned char> v_;
+
+        //for output
+        std::string out_prefix_;
+        int layer_index_;
     };
 
     class hexcout {
