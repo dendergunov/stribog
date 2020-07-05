@@ -46,17 +46,8 @@ std::vector<unsigned char> fts::ft()
     for(std::size_t i = 1; i < tau_+1; ++i){
         std::cout << "processing layer " << layer_index_ << '\n';
         std::cout << "in vector size in bytes: " << v_.size() << '\n';
-        this->v_ = g_map(this->sblock_number_, this->v_.begin(), this->v_.end());
+        this->v_ = g_map(this->sblock_number_, this->v_.begin(), this->v_.end(), true);
         this->sblock_number_ /= this->l_arity_;
-        //Print layer state
-        std::string file_name(format(this->out_prefix_, "_layer_", this->layer_index_++));
-        std::fstream out_file(file_name, std::ios::binary | std::ios::out);
-        if(!out_file.is_open()){
-            throw std::runtime_error(format("Cannot open file ", file_name, " \n"));
-        }
-        for(auto x:this->v_)
-            out_file << x;
-        std::cout << "layer output is written to " << file_name << '\n';
     }
 
     std::cout << "processing layer " << layer_index_ << '\n';
@@ -134,7 +125,7 @@ void fts::second_stage()
     }
 }
 
-std::vector<unsigned char> fts::g_map(std::size_t sblock_number, std::vector<unsigned char>::iterator begin, std::vector<unsigned char>::iterator end)
+std::vector<unsigned char> fts::g_map(std::size_t sblock_number, std::vector<unsigned char>::iterator begin, std::vector<unsigned char>::iterator end, bool to_write)
 {
 //    std::cout << "g_map:\n";
     std::size_t in_sblock_size = block_size * (this->l_arity_+1);
@@ -196,6 +187,19 @@ std::vector<unsigned char> fts::g_map(std::size_t sblock_number, std::vector<uns
 //        std::cout << ' ';
 //    }
 //    std::cout << '\n';
+
+    if(to_write){
+        //Print layer state
+        std::string file_name(format(this->out_prefix_, "_layer_", this->layer_index_++));
+        std::fstream out_file(file_name, std::ios::binary | std::ios::out);
+        if(!out_file.is_open()){
+            throw std::runtime_error(format("Cannot open file ", file_name, " \n"));
+        }
+        for(auto x:this->v_)
+            out_file << x;
+        std::cout << "layer output is written to " << file_name << '\n';
+    }
+
     add_sblock_indexes(out);
 
     return out;

@@ -37,7 +37,7 @@ namespace ft {
     private:
         void first_stage();
         void second_stage();
-        std::vector<unsigned char> g_map(std::size_t sblock_number, std::vector<unsigned char>::iterator begin, std::vector<unsigned char>::iterator end);
+        std::vector<unsigned char> g_map(std::size_t sblock_number, std::vector<unsigned char>::iterator begin, std::vector<unsigned char>::iterator end, bool to_write = 0);
         void add_sblock_indexes(std::vector<unsigned char>& v);
 
         std::size_t l_arity_;
