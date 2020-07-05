@@ -195,7 +195,7 @@ std::vector<unsigned char> fts::g_map(std::size_t sblock_number, std::vector<uns
         if(!out_file.is_open()){
             throw std::runtime_error(format("Cannot open file ", file_name, " \n"));
         }
-        for(auto x:this->v_)
+        for(auto x:out)
             out_file << x;
         std::cout << "layer output is written to " << file_name << '\n';
     }
