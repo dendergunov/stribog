@@ -205,3 +205,10 @@ The minimum pass rate for the random excursion (variant) test is undefined.
 For further guidelines construct a probability table using the MAPLE program
 provided in the addendum section of the documentation.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+File zeros_layer_2 (23328 * 16)/zeros_layer_2 size: 46656 bytes
+Number of one bits: 187087
+Number of zero bits: 186161
+P(one) = 0.50124
+P(zero) = 0.49876
+P(one)+P(zero) = 1
+Entropy (base 2) = 0.999996

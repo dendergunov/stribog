@@ -206,3 +206,10 @@ is approximately = 0 for a sample size = 1 binary sequences.
 For further guidelines construct a probability table using the MAPLE program
 provided in the addendum section of the documentation.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+File zeros_layer_1 (93312 * 12)/zeros_layer_1 size: 139968 bytes
+Number of one bits: 568338
+Number of zero bits: 551406
+P(one) = 0.507561
+P(zero) = 0.492439
+P(one)+P(zero) = 1
+Entropy (base 2) = 0.999835
