@@ -8,6 +8,8 @@ echo wrong number of args
 exit 1
 fi
 
+mkdir /home/yegorius/Projects/stribog/reports/${prefix}/${2}
+
 for arity in 2 3 4 5 6 7 8
 do
 ./FT-stribog $arity $prefix $prefix
@@ -17,15 +19,15 @@ for layer in ${prefix}_*
 do
 size=`wc -c < $layer`
 flag=0
-if [ $size -ge 2000 ]; then
+if [ $size -ge 4000 ]; then
  size=`expr $size / 2`
  streams=16
- elif [ $size -ge 1000 ]; then
+ elif [ $size -ge 2000 ]; then
   streams=8
- elif [ $size -ge 500 ]; then
+ elif [ $size -ge 1000 ]; then
   size=`expr $size \* 2`
   streams=4
- elif [ $size -ge 250 ]; then
+ elif [ $size -ge 500 ]; then
   size=`expr $size \* 4`
   streams=2
  else
@@ -68,3 +70,4 @@ cp -r /home/yegorius/sts-2.1.2/experiments/AlgorithmTesting/* .
 cd $current
 done
 done
+mv $prefix /home/yegorius/Projects/stribog/reports/${prefix}/${2}
