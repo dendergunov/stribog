@@ -1,19 +1,22 @@
 #!/bin/sh
-# Первый аргумент - префикс
-# Второй аргумент - название подпапки (с размером или конкретным распределением)
-prefix=$1
+# Первый аргумент - режим работы (stribog или xor)
+# Второй аргумент - префикс
+# Третий аргумент - название подпапки (с размером или конкретным распределением)
+mode=$1
+prefix=$2
+folder=$3
 
-if [ $# -ne 2 ]; then
+if [ $# -ne 3 ]; then
 echo wrong number of args
 exit 1
 fi
 
-mkdir /home/yegorius/Projects/stribog/reports/${prefix}/${2}
+mkdir -p /home/yegorius/Projects/stribog/reports/${prefix}/${folder}/${mode}
 
 for arity in 2 3 4 5 6 7 8
 do
-./FT-stribog $arity $prefix $prefix
-mkdir /home/yegorius/Projects/stribog/reports/${prefix}/${2}/${arity}
+./FT-${mode} $arity $prefix $prefix
+mkdir /home/yegorius/Projects/stribog/reports/${prefix}/${folder}/${mode}/${arity}
 
 for layer in ${prefix}_*
 do
@@ -40,7 +43,8 @@ if [ $flag -eq 0 ]; then
 ./assess $size << ANSWERS
 0
 $layer
-1
+0
+111111101110011
 0
 $streams
 1
@@ -62,7 +66,7 @@ fi
 
 # Перенос результатов в другую папку
 current=`pwd`
-cd /home/yegorius/Projects/stribog/reports/${prefix}/${2}/${arity}
+cd /home/yegorius/Projects/stribog/reports/${prefix}/${folder}/${mode}/${arity}
 mkdir $layer
 cd $layer
 mv /home/yegorius/sts-2.1.2/${layer} .
@@ -70,4 +74,4 @@ cp -r /home/yegorius/sts-2.1.2/experiments/AlgorithmTesting/* .
 cd $current
 done
 done
-mv $prefix /home/yegorius/Projects/stribog/reports/${prefix}/${2}
+mv $prefix /home/yegorius/Projects/stribog/reports/${prefix}/${folder}
