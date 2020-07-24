@@ -1,0 +1,38 @@
+------------------------------------------------------------------------------
+RESULTS FOR THE UNIFORMITY OF P-VALUES AND THE PROPORTION OF PASSING SEQUENCES
+------------------------------------------------------------------------------
+   generator is <bernoulli_layer_1>
+------------------------------------------------------------------------------
+ C1  C2  C3  C4  C5  C6  C7  C8  C9 C10  P-VALUE  PROPORTION  STATISTICAL TEST
+------------------------------------------------------------------------------
+ 11   0   0   2   2   1   0   0   0   0  0.000000 *    6/16   *  Frequency
+ 10   2   1   0   0   0   0   1   1   1  0.000000 *    6/16   *  BlockFrequency
+ 11   0   0   2   1   0   2   0   0   0  0.000000 *    6/16   *  CumulativeSums
+ 11   0   1   0   0   1   0   3   0   0  0.000000 *    6/16   *  CumulativeSums
+  9   1   1   1   0   1   0   0   1   2  0.000000 *    7/16   *  Runs
+ 10   1   0   0   1   1   0   2   1   0  0.000000 *    6/16   *  LongestRun
+  0   2   2   0   1   2   1   6   1   1  0.000439     16/16      Rank
+ 11   2   0   0   0   3   0   0   0   0  0.000000 *   10/16   *  FFT
+  9   0   2   1   1   1   1   0   0   1  0.000000 *   14/16      OverlappingTemplate
+ 16   0   0   0   0   0   0   0   0   0  0.000000 *    0/16   *  Universal
+ 11   0   1   1   2   0   0   0   1   0  0.000000 *    7/16   *  ApproximateEntropy
+  7   3   1   1   1   0   3   0   0   0  0.000000 *   12/16   *  Serial
+  3   0   2   2   2   3   2   1   0   1  0.122325     16/16      Serial
+  3   1   1   2   0   2   5   1   0   1  0.004301     15/16      LinearComplexity
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+The minimum pass rate for each statistical test with the exception of the
+random excursion (variant) test is approximately = 14 for a
+sample size = 16 binary sequences.
+
+For further guidelines construct a probability table using the MAPLE program
+provided in the addendum section of the documentation.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+File bernoulli_layer_1 size: 32768 bytes
+Number of one bits: 120934
+Number of zero bits: 141210
+P(one) = 0.461327
+P(zero) = 0.538673
+P(one)+P(zero) = 1
+Entropy (base 2) = 0.99568

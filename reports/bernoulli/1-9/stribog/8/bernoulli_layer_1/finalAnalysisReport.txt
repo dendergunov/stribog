@@ -1,0 +1,214 @@
+------------------------------------------------------------------------------
+RESULTS FOR THE UNIFORMITY OF P-VALUES AND THE PROPORTION OF PASSING SEQUENCES
+------------------------------------------------------------------------------
+   generator is <bernoulli_layer_1>
+------------------------------------------------------------------------------
+ C1  C2  C3  C4  C5  C6  C7  C8  C9 C10  P-VALUE  PROPORTION  STATISTICAL TEST
+------------------------------------------------------------------------------
+  2   2   1   2   0   3   0   1   5   0  0.002043     16/16      Frequency
+  3   4   2   1   1   2   0   1   1   1  0.066882     16/16      BlockFrequency
+  2   3   0   0   0   2   3   4   1   1  0.008879     16/16      CumulativeSums
+  3   1   1   0   0   0   3   2   2   4  0.008879     15/16      CumulativeSums
+  4   4   0   1   1   3   0   1   2   0  0.002043     16/16      Runs
+  2   4   1   1   2   1   1   1   2   1  0.213309     16/16      LongestRun
+  0   0   1   4   0   1   3   6   0   1  0.000003 *   16/16      Rank
+  2   2   0   2   2   2   1   0   4   1  0.066882     15/16      FFT
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  0   0   0   0   0   0   0  16   0   0  0.000000 *   16/16      NonOverlappingTemplate
+  6   0   2   0   1   0   2   3   2   0  0.000040 *   15/16      OverlappingTemplate
+ 16   0   0   0   0   0   0   0   0   0  0.000000 *    0/16   *  Universal
+  9   3   0   0   1   2   0   1   0   0  0.000000 *   14/16      ApproximateEntropy
+  0   0   0   0   0   0   0   0   0   0     ----     ------     RandomExcursions
+  0   0   0   0   0   0   0   0   0   0     ----     ------     RandomExcursions
+  0   0   0   0   0   0   0   0   0   0     ----     ------     RandomExcursions
+  0   0   0   0   0   0   0   0   0   0     ----     ------     RandomExcursions
+  0   0   0   0   0   0   0   0   0   0     ----     ------     RandomExcursions
+  0   0   0   0   0   0   0   0   0   0     ----     ------     RandomExcursions
+  0   0   0   0   0   0   0   0   0   0     ----     ------     RandomExcursions
+  0   0   0   0   0   0   0   0   0   0     ----     ------     RandomExcursions
+  0   0   0   0   0   0   0   0   0   0     ----     ------     RandomExcursionsVariant
+  0   0   0   0   0   0   0   0   0   0     ----     ------     RandomExcursionsVariant
+  0   0   0   0   0   0   0   0   0   0     ----     ------     RandomExcursionsVariant
+  0   0   0   0   0   0   0   0   0   0     ----     ------     RandomExcursionsVariant
+  0   0   0   0   0   0   0   0   0   0     ----     ------     RandomExcursionsVariant
+  0   0   0   0   0   0   0   0   0   0     ----     ------     RandomExcursionsVariant
+  0   0   0   0   0   0   0   0   0   0     ----     ------     RandomExcursionsVariant
+  0   0   0   0   0   0   0   0   0   0     ----     ------     RandomExcursionsVariant
+  0   0   0   0   0   0   0   0   0   0     ----     ------     RandomExcursionsVariant
+  0   0   0   0   0   0   0   0   0   0     ----     ------     RandomExcursionsVariant
+  0   0   0   0   0   0   0   0   0   0     ----     ------     RandomExcursionsVariant
+  0   0   0   0   0   0   0   0   0   0     ----     ------     RandomExcursionsVariant
+  0   0   0   0   0   0   0   0   0   0     ----     ------     RandomExcursionsVariant
+  0   0   0   0   0   0   0   0   0   0     ----     ------     RandomExcursionsVariant
+  0   0   0   0   0   0   0   0   0   0     ----     ------     RandomExcursionsVariant
+  0   0   0   0   0   0   0   0   0   0     ----     ------     RandomExcursionsVariant
+  0   0   0   0   0   0   0   0   0   0     ----     ------     RandomExcursionsVariant
+  0   0   0   0   0   0   0   0   0   0     ----     ------     RandomExcursionsVariant
+  2   2   0   2   1   1   3   1   2   2  0.350485     16/16      Serial
+  2   0   4   1   0   1   1   1   3   3  0.017912     16/16      Serial
+  0   2   2   1   2   2   3   2   1   1  0.350485     16/16      LinearComplexity
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+The minimum pass rate for each statistical test with the exception of the
+random excursion (variant) test is approximately = 14 for a
+sample size = 16 binary sequences.
+
+The minimum pass rate for the random excursion (variant) test is undefined.
+
+For further guidelines construct a probability table using the MAPLE program
+provided in the addendum section of the documentation.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+File bernoulli_layer_1 size: 32768 bytes
+Number of one bits: 130697
+Number of zero bits: 131447
+P(one) = 0.498569
+P(zero) = 0.501431
+P(one)+P(zero) = 1
+Entropy (base 2) = 0.999994
