@@ -1,0 +1,31 @@
+------------------------------------------------------------------------------
+RESULTS FOR THE UNIFORMITY OF P-VALUES AND THE PROPORTION OF PASSING SEQUENCES
+------------------------------------------------------------------------------
+   generator is <lcg_layer_8>
+------------------------------------------------------------------------------
+ C1  C2  C3  C4  C5  C6  C7  C8  C9 C10  P-VALUE  PROPORTION  STATISTICAL TEST
+------------------------------------------------------------------------------
+  1   0   0   0   0   0   0   0   0   0     ----       0/1       Frequency
+  1   0   0   0   0   0   0   0   0   0     ----       1/1       BlockFrequency
+  1   0   0   0   0   0   0   0   0   0     ----       0/1       CumulativeSums
+  1   0   0   0   0   0   0   0   0   0     ----       0/1       CumulativeSums
+  0   0   1   0   0   0   0   0   0   0     ----       1/1       Runs
+  1   0   0   0   0   0   0   0   0   0     ----       1/1       LongestRun
+  0   0   0   0   1   0   0   0   0   0     ----       1/1       FFT
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+The minimum pass rate for each statistical test with the exception of the
+random excursion (variant) test is approximately = 0 for a
+sample size = 1 binary sequences.
+
+For further guidelines construct a probability table using the MAPLE program
+provided in the addendum section of the documentation.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+File lcg_layer_8 size: 64 bytes
+Number of one bits: 224
+Number of zero bits: 288
+P(one) = 0.4375
+P(zero) = 0.5625
+P(one)+P(zero) = 1
+Entropy (base 2) = 0.988699

@@ -1,0 +1,120 @@
+				RUNS TEST
+		------------------------------------------
+		PI ESTIMATOR CRITERIA NOT MET! PI = 0.460205
+				RUNS TEST
+		------------------------------------------
+		COMPUTATIONAL INFORMATION:
+		------------------------------------------
+		(a) Pi                        = 0.475098
+		(b) V_n_obs (Total # of runs) = 2031
+		(c) V_n_obs - 2 n pi (1-pi)
+		    -----------------------   = 0.264051
+		      2 sqrt(2n) pi (1-pi)
+		------------------------------------------
+SUCCESS		p_value = 0.708833
+
+				RUNS TEST
+		------------------------------------------
+		PI ESTIMATOR CRITERIA NOT MET! PI = 0.464355
+				RUNS TEST
+		------------------------------------------
+		PI ESTIMATOR CRITERIA NOT MET! PI = 0.466553
+				RUNS TEST
+		------------------------------------------
+		PI ESTIMATOR CRITERIA NOT MET! PI = 0.465332
+				RUNS TEST
+		------------------------------------------
+		PI ESTIMATOR CRITERIA NOT MET! PI = 0.463623
+				RUNS TEST
+		------------------------------------------
+		PI ESTIMATOR CRITERIA NOT MET! PI = 0.458496
+				RUNS TEST
+		------------------------------------------
+		COMPUTATIONAL INFORMATION:
+		------------------------------------------
+		(a) Pi                        = 0.474365
+		(b) V_n_obs (Total # of runs) = 2045
+		(c) V_n_obs - 2 n pi (1-pi)
+		    -----------------------   = 0.052803
+		      2 sqrt(2n) pi (1-pi)
+		------------------------------------------
+SUCCESS		p_value = 0.940474
+
+				RUNS TEST
+		------------------------------------------
+		COMPUTATIONAL INFORMATION:
+		------------------------------------------
+		(a) Pi                        = 0.471680
+		(b) V_n_obs (Total # of runs) = 2023
+		(c) V_n_obs - 2 n pi (1-pi)
+		    -----------------------   = 0.408553
+		      2 sqrt(2n) pi (1-pi)
+		------------------------------------------
+SUCCESS		p_value = 0.563412
+
+				RUNS TEST
+		------------------------------------------
+		COMPUTATIONAL INFORMATION:
+		------------------------------------------
+		(a) Pi                        = 0.472412
+		(b) V_n_obs (Total # of runs) = 2065
+		(c) V_n_obs - 2 n pi (1-pi)
+		    -----------------------   = 0.514991
+		      2 sqrt(2n) pi (1-pi)
+		------------------------------------------
+SUCCESS		p_value = 0.466426
+
+				RUNS TEST
+		------------------------------------------
+		COMPUTATIONAL INFORMATION:
+		------------------------------------------
+		(a) Pi                        = 0.471436
+		(b) V_n_obs (Total # of runs) = 2070
+		(c) V_n_obs - 2 n pi (1-pi)
+		    -----------------------   = 0.635910
+		      2 sqrt(2n) pi (1-pi)
+		------------------------------------------
+SUCCESS		p_value = 0.368486
+
+				RUNS TEST
+		------------------------------------------
+		COMPUTATIONAL INFORMATION:
+		------------------------------------------
+		(a) Pi                        = 0.469727
+		(b) V_n_obs (Total # of runs) = 2045
+		(c) V_n_obs - 2 n pi (1-pi)
+		    -----------------------   = 0.099976
+		      2 sqrt(2n) pi (1-pi)
+		------------------------------------------
+SUCCESS		p_value = 0.887564
+
+				RUNS TEST
+		------------------------------------------
+		COMPUTATIONAL INFORMATION:
+		------------------------------------------
+		(a) Pi                        = 0.472412
+		(b) V_n_obs (Total # of runs) = 2066
+		(c) V_n_obs - 2 n pi (1-pi)
+		    -----------------------   = 0.537155
+		      2 sqrt(2n) pi (1-pi)
+		------------------------------------------
+SUCCESS		p_value = 0.447463
+
+				RUNS TEST
+		------------------------------------------
+		PI ESTIMATOR CRITERIA NOT MET! PI = 0.464355
+				RUNS TEST
+		------------------------------------------
+		PI ESTIMATOR CRITERIA NOT MET! PI = 0.463135
+				RUNS TEST
+		------------------------------------------
+		COMPUTATIONAL INFORMATION:
+		------------------------------------------
+		(a) Pi                        = 0.468994
+		(b) V_n_obs (Total # of runs) = 2059
+		(c) V_n_obs - 2 n pi (1-pi)
+		    -----------------------   = 0.418703
+		      2 sqrt(2n) pi (1-pi)
+		------------------------------------------
+SUCCESS		p_value = 0.553759
+

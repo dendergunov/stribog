@@ -1,0 +1,38 @@
+------------------------------------------------------------------------------
+RESULTS FOR THE UNIFORMITY OF P-VALUES AND THE PROPORTION OF PASSING SEQUENCES
+------------------------------------------------------------------------------
+   generator is <lcg_layer_4>
+------------------------------------------------------------------------------
+ C1  C2  C3  C4  C5  C6  C7  C8  C9 C10  P-VALUE  PROPORTION  STATISTICAL TEST
+------------------------------------------------------------------------------
+  2   0   0   1   0   0   0   0   1   0     ----       4/4       Frequency
+  0   0   0   0   0   0   1   1   1   1     ----       4/4       BlockFrequency
+  1   1   0   1   0   0   1   0   0   0     ----       4/4       CumulativeSums
+  1   1   0   1   0   0   0   0   1   0     ----       4/4       CumulativeSums
+  0   1   0   1   0   1   0   0   0   1     ----       4/4       Runs
+  0   0   0   0   1   1   0   1   0   1     ----       4/4       LongestRun
+  1   0   0   1   1   0   0   1   0   0     ----       4/4       Rank
+  0   1   0   0   0   0   1   1   0   1     ----       4/4       FFT
+  0   0   0   1   1   0   0   1   1   0     ----       4/4       OverlappingTemplate
+  4   0   0   0   0   0   0   0   0   0     ----       0/4    *  Universal
+  4   0   0   0   0   0   0   0   0   0     ----       0/4    *  ApproximateEntropy
+  0   1   0   0   0   1   1   1   0   0     ----       4/4       Serial
+  2   0   0   0   0   0   0   0   1   1     ----       4/4       Serial
+  0   0   0   0   0   1   0   0   0   3     ----       4/4       LinearComplexity
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+The minimum pass rate for each statistical test with the exception of the
+random excursion (variant) test is approximately = 3 for a
+sample size = 4 binary sequences.
+
+For further guidelines construct a probability table using the MAPLE program
+provided in the addendum section of the documentation.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+File lcg_layer_4 size: 1600 bytes
+Number of one bits: 6438
+Number of zero bits: 6362
+P(one) = 0.502969
+P(zero) = 0.497031
+P(one)+P(zero) = 1
+Entropy (base 2) = 0.999975

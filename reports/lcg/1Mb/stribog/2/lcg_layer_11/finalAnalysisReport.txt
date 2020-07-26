@@ -1,0 +1,38 @@
+------------------------------------------------------------------------------
+RESULTS FOR THE UNIFORMITY OF P-VALUES AND THE PROPORTION OF PASSING SEQUENCES
+------------------------------------------------------------------------------
+   generator is <lcg_layer_11>
+------------------------------------------------------------------------------
+ C1  C2  C3  C4  C5  C6  C7  C8  C9 C10  P-VALUE  PROPORTION  STATISTICAL TEST
+------------------------------------------------------------------------------
+  0   0   0   1   0   0   1   0   0   0     ----       2/2       Frequency
+  0   1   0   0   0   0   0   1   0   0     ----       2/2       BlockFrequency
+  0   0   0   1   1   0   0   0   0   0     ----       2/2       CumulativeSums
+  0   0   0   0   1   1   0   0   0   0     ----       2/2       CumulativeSums
+  0   0   1   0   0   0   0   0   0   1     ----       2/2       Runs
+  0   1   0   0   0   0   0   0   1   0     ----       2/2       LongestRun
+  0   0   0   0   2   0   0   0   0   0     ----       2/2       Rank
+  1   0   0   0   0   0   1   0   0   0     ----       2/2       FFT
+  0   0   0   0   1   0   0   0   1   0     ----       2/2       OverlappingTemplate
+  2   0   0   0   0   0   0   0   0   0     ----       0/2    *  Universal
+  2   0   0   0   0   0   0   0   0   0     ----       1/2       ApproximateEntropy
+  0   0   0   0   0   0   0   1   0   1     ----       2/2       Serial
+  0   0   0   0   0   0   0   0   0   2     ----       2/2       Serial
+  0   0   0   0   0   0   0   0   2   0     ----       2/2       LinearComplexity
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+The minimum pass rate for each statistical test with the exception of the
+random excursion (variant) test is approximately = 1 for a
+sample size = 2 binary sequences.
+
+For further guidelines construct a probability table using the MAPLE program
+provided in the addendum section of the documentation.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+File lcg_layer_11 size: 512 bytes
+Number of one bits: 2111
+Number of zero bits: 1985
+P(one) = 0.515381
+P(zero) = 0.484619
+P(one)+P(zero) = 1
+Entropy (base 2) = 0.999317
