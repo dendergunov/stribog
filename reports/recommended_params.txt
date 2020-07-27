@@ -1,0 +1,36 @@
+Планируется n = 1024 бит
+
+[01] Frequency
+    n >= 100 бит
+[02] Block Frequency
+    M = 128 - норм
+    n >= 100
+[03] Cumulative Sums  
+    n >= 100
+[04] Runs
+    n >= 100 бит
+[05] Longest Run of Ones
+    n >= 128 (если M = 8)
+[06] Rank
+    n >= 38912
+[07] Discrete Fourier Transform
+    n >= 1000
+[08] Nonperiodic Template Matchings
+    Не используем (но потенциально любой???)
+[09] Overlapping Template Matchings  
+    n >= 1032 * 968
+[10] Universal Statistical
+    n >= 387840
+[11] Approximate Entropy
+    Если n = 1024, то m < 5 (берем m = 4)
+[12] Random Excursions
+    n >= 1000000
+[13] Random Excursions Variant 
+    n >= 1000000
+[14] Serial
+    Если n = 1024, то m < 8 (берем m = 7)
+[15] Linear Complexity
+    n >= 1000000
+    
+Итого: 111110100010010
+( для 64 байт 111110000010010)
